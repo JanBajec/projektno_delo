@@ -1,10 +1,13 @@
+const customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Moji vnosi
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -12,6 +15,39 @@
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-list>
+    <ion-item>
+      <ion-img width="10" height="10" src="https://znam.si/wp-content/uploads/2020/12/Kremna-s%CC%8Cpargljeva-riz%CC%8Cota.jpg"></ion-img>
+      <ion-label>Špargljeva rižota</ion-label>
+      <ion-item>
+        <ion-label>Leap years, summer months</ion-label>
+        <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" monthValues="6,7,8" [yearValues]="customYearValues"></ion-datetime>
+      </ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-img width="80" height="80" src="https://www.sitfit.si/wp-content/uploads/kremna-jajcka-v-tortiliji16b.jpg"></ion-img>
+      <ion-label>Umešana jajca v tortiliji</ion-label>
+      <ion-title>335</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-img width="80" height="80" src="https://oopsi.si/wp-content/uploads/2017/04/DSC_0963.jpg"></ion-img>
+      <ion-label>Zelenjavni narastek</ion-label>
+      <ion-title>939</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-img width="80" height="80" src="http://midvakuhava.si/wp-content/uploads/2015/11/coko-coko-5.jpg"></ion-img>
+      <ion-label>Čokoladna torta</ion-label>
+      <ion-title>1232</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-img width="80" height="80" src="http://www.kuharija.si/sites/default/files/imagecache/full_recipe/ajdova_kasa_z_zelenjavo.jpg"></ion-img>
+      <ion-label>Ajdova kaša z zelenjavo</ion-label>
+      <ion-title>324</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-img src="https://odprtakuhinja.delo.si/wp-content/uploads/2019/03/Odprtakuhinja-spageti.jpg"></ion-img>
+      <ion-label>Špageti s česnom, oljem, čilijem in kozicami</ion-label>
+      <ion-title>555</ion-title>
+    </ion-item>
+  </ion-list>
 </ion-content>

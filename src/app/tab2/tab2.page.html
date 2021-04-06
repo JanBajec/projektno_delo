@@ -1,17 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Dodaj Recept
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-item class="ion-margin">
+    <ion-label position="floating">Ime</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item class="ion-margin">
+    <ion-label position="floating">Seznam sestavin</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item class="ion-margin">
+    <ion-label position="floating" type="number">Število kalorij</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item class="ion-margin">
+    <ion-label position="floating">Floating Label</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-button expand="full" class="ion-margin ion-align-self-stretch">Dodaj Fotografijo</ion-button>
 </ion-content>

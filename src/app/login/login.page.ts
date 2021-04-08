@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { AuthenticationService } from "../services/authentication.service";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public authService: AuthenticationService,
+    public router: Router
+  ) { }
 
   ngOnInit() {
   }
+
+  logIn(email, password) {
+    this.authService.SignIn(email.value, password.value)
+      .then((res) => {
+        if(this.authService.SignIn) {
+          this.router.navigate(['tabs']);          
+        } else {
+          window.alert('Error during login')
+          return false;
+        }
+      }).catch((error) => {
+        window.alert(error.message)
+      })
+  }
+
 
 }

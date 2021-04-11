@@ -21,5 +21,12 @@ export class FirebaseService {
     });
   }
 
-
+  getFoods(search: string){
+    if (search === undefined || search === null || search === '') {
+      return this.afs.collection('foods');
+    }else{
+      return this.afs.collection('foods', ref => ref
+        .where('name', '==', search));
+    }
+  }
 }

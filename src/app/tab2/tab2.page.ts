@@ -45,28 +45,6 @@ export class Tab2Page {
     });
   }
 
-  // dataURLtoBlob(dataURL){
-  //   let binary = atob(dataURL.split(',')[1]);
-  //   let array = [];
-  //   for (let i = 1; i < binary.length; i++) {
-  //     array.push(binary.charCodeAt(i));
-  //   }
-  //   return new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
-  // }
-
-  // async upload() {
-  //   Tab2Page.loading = await this.loadingCtrl.create({
-  //     message: 'uploading..'
-  //   });
-  //   await Tab2Page.loading.present();
-  //   if (this.selectedPhoto){
-  //     let uploadTask = firebase.storage().ref().child('myImage.jpg')
-  //       .put(this.selectedPhoto);
-  //     uploadTask.then(this.onSuccess, this.onError);
-  //   }
-  // }
-  //
-
   async addToFirebase() {
     try {
       Tab2Page.loading = await this.loadingCtrl.create({

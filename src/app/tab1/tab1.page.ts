@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {Food} from "../services/food";
+import {FirebaseService} from "../services/firebase.service";
 
 @Component({
   selector: 'app-tab1',
@@ -7,9 +10,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class Tab1Page implements OnInit {
 
-  constructor() {}
+  constructor(public fireService: FirebaseService) {}
+  public foods: Array<Food>;
 
   ngOnInit(): void {
-
+    console.log(this.fireService.getFoods(''));
   }
 }

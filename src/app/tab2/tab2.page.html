@@ -9,19 +9,20 @@
 <ion-content [fullscreen]="true">
   <ion-item class="ion-margin">
     <ion-label position="floating">Ime</ion-label>
-    <ion-input></ion-input>
+    <ion-input (keyup)="nameKeyUp($event)"></ion-input>
   </ion-item>
   <ion-item class="ion-margin">
     <ion-label position="floating">Seznam sestavin</ion-label>
-    <ion-input></ion-input>
+    <ion-input (keyup)="ingredientsKeyUp($event)"></ion-input>
   </ion-item>
   <ion-item class="ion-margin">
     <ion-label position="floating" type="number">Število kalorij</ion-label>
-    <ion-input></ion-input>
+    <ion-input (keyup)="caloriesKeyUp($event)"></ion-input>
   </ion-item>
-  <ion-item class="ion-margin">
-    <ion-label position="floating">Floating Label</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-button expand="full" class="ion-margin ion-align-self-stretch">Dodaj Fotografijo</ion-button>
+  <div *ngIf="base64Show">
+    <ion-img class="ion-margin ion-padding" [src]="base64Show"></ion-img>
+    <ion-button expand="full" class="ion-margin ion-align-self-stretch" color="danger" (click)="removePhoto()">Odtrani Fotografijo</ion-button>
+  </div>
+  <ion-button expand="full" class="ion-margin ion-align-self-stretch" (click)="takePhoto()">Dodaj Fotografijo</ion-button>
+  <ion-button expand="full" class="ion-margin ion-align-self-stretch" (click)="addToFirebase()">Dodaj v Bazo</ion-button>
 </ion-content>

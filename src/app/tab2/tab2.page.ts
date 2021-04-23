@@ -52,7 +52,7 @@ export class Tab2Page {
       });
       await Tab2Page.loading.present();
       this.newFood.imgBase64 = this.base64;
-      this.fireService.addFood(this.newFood).then(res => {
+      this.fireService.addFoodFire(this.newFood).then(res => {
         Tab2Page.loading.dismiss();
       });
     } catch (err){

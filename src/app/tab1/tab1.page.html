@@ -15,9 +15,18 @@
 
   <ion-searchbar
     [(ngModel)]="myInput"
-    [showCancelButton]="shouldShowCancel"
-    (ionInput)="onInput($event)"
-    (ionCancel)="onCancel($event)">
+    (ionChange)="onInput()">
   </ion-searchbar>
+
+  <div style="display: flex">
+    <ion-card style="display: flex; flex-wrap: wrap;" class="ion-margin" *ngFor="let food of searchFoods">
+      <ion-img class="foodImage ion-margin" [src]="food.imgBase64"></ion-img>
+      <div class="foodTextDiv">
+        <ion-title>{{food.name}}</ion-title>
+        <label>{{food.ingredients}}</label><br>
+        <label>{{food.calories}}</label>
+      </div>
+    </ion-card>
+  </div>
 
 </ion-content>
